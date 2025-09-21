@@ -4,6 +4,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 // Pages
 import Dashboard from './pages/Dashboard';
+import Residents from './pages/Residents';
+import Tasks from './pages/Tasks';
 
 // Configuration TanStack Query
 const queryClient = new QueryClient({
@@ -22,6 +24,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/residents" element={<Residents />} />
+          <Route path="/tasks" element={<Tasks />} />
           <Route path="*" element={
             <div className="min-h-screen bg-gray-50 flex items-center justify-center">
               <div className="text-center">
