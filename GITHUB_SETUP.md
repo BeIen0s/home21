@@ -13,11 +13,19 @@
    - **Ne pas** initialiser avec README (nous en avons déjà un)
    - **Ne pas** ajouter .gitignore (nous en avons déjà un)
 
-### 2. Connecter le repository local
+### 2. Stratégie de branches
+
+🎆 **BONNE NOUVELLE** : Votre code Home21 v2 est déjà poussé sur GitHub !
+
+- **Branche existante** : `main` (ancienne version Home21)
+- **Nouvelle branche** : `home21-v2` (version moderne complète)
+- **URL de la branche** : https://github.com/BeIen0s/home21/tree/home21-v2
+
+### 3. Connecter le repository local (DÉJÀ FAIT)
 
 ```bash
-# Ajouter l'origin remote (remplacer USERNAME par votre nom d'utilisateur GitHub)
-git remote add origin https://github.com/USERNAME/home21-v2.git
+# Ajouter l'origin remote (DÉJÀ FAIT)
+git remote add origin https://github.com/BeIen0s/home21.git
 
 # Vérifier que l'origin est configuré
 git remote -v
@@ -25,11 +33,11 @@ git remote -v
 # Renommer la branche master en main (convention moderne)
 git branch -M main
 
-# Pousser le code vers GitHub
-git push -u origin main
+# Pousser la branche home21-v2 (DÉJÀ FAIT)
+git push -u origin home21-v2
 ```
 
-### 3. Configuration des Secrets GitHub (pour CI/CD)
+### 4. Configuration des Secrets GitHub (pour CI/CD)
 
 Dans les paramètres du repository GitHub → Settings → Secrets and variables → Actions :
 
@@ -41,7 +49,7 @@ Dans les paramètres du repository GitHub → Settings → Secrets and variables
 - `SLACK_WEBHOOK` : Webhook pour notifications Slack
 - `REACT_APP_API_URL` : URL de l'API (si différente de la valeur par défaut)
 
-### 4. Configuration Netlify
+### 5. Configuration Netlify
 
 #### Option A : Via GitHub (recommandée)
 1. Aller sur [app.netlify.com](https://app.netlify.com)
@@ -64,7 +72,7 @@ netlify login
 netlify deploy --prod --dir frontend/build
 ```
 
-### 5. Variables d'environnement Netlify
+### 6. Variables d'environnement Netlify
 
 Dans Netlify → Site settings → Environment variables :
 
@@ -94,8 +102,9 @@ git push origin feature/residents-management
 
 ## 🌐 URLs après déploiement
 
-- **Repository GitHub** : `https://github.com/USERNAME/home21-v2`
-- **Actions CI/CD** : `https://github.com/USERNAME/home21-v2/actions`
+- **Repository GitHub** : `https://github.com/BeIen0s/home21`
+- **Branche Home21 v2** : `https://github.com/BeIen0s/home21/tree/home21-v2`
+- **Actions CI/CD** : `https://github.com/BeIen0s/home21/actions`
 - **Site Netlify** : `https://amazing-app-name.netlify.app`
 - **Site custom domain** : `https://home21.votre-domaine.com`
 
@@ -103,7 +112,7 @@ git push origin feature/residents-management
 
 ```bash
 # Cloner le projet (pour d'autres développeurs)
-git clone https://github.com/USERNAME/home21-v2.git
+git clone -b home21-v2 https://github.com/BeIen0s/home21.git
 
 # Développement local avec Docker
 cd home21-v2
