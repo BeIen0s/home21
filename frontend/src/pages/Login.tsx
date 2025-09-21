@@ -49,63 +49,108 @@ export const Login: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
+    <div 
+      className="min-h-screen" 
+      style={{
+        background: 'linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '1rem'
+      }}
+    >
+      <div style={{ width: '100%', maxWidth: '28rem' }}>
         {/* Logo et titre */}
-        <div className="text-center mb-8">
-          <div className="text-4xl mb-4">🏠</div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Home21</h1>
-          <p className="text-gray-600">Plateforme de gestion de résidence étudiante</p>
+        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+          <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🏠</div>
+          <h1 style={{ fontSize: '2.25rem', fontWeight: 'bold', color: '#111827', marginBottom: '0.5rem', margin: 0 }}>
+            Home21
+          </h1>
+          <p style={{ color: '#6b7280', margin: 0 }}>
+            Plateforme de gestion de résidence étudiante
+          </p>
         </div>
 
         {/* Formulaire de connexion */}
         <Card>
           <CardHeader>
-            <h2 className="text-xl font-semibold text-center">Connexion</h2>
+            <h2 style={{ fontSize: '1.25rem', fontWeight: '600', textAlign: 'center', margin: 0 }}>
+              Connexion
+            </h2>
           </CardHeader>
           
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               {error && (
-                <div className="p-3 bg-red-50 border border-red-200 rounded-md">
-                  <p className="text-sm text-red-600">{error}</p>
+                <div style={{
+                  padding: '0.75rem',
+                  backgroundColor: '#fef2f2',
+                  border: '1px solid #fecaca',
+                  borderRadius: '0.375rem'
+                }}>
+                  <p style={{ fontSize: '0.875rem', color: '#dc2626', margin: 0 }}>{error}</p>
                 </div>
               )}
 
-              <Input
-                type="email"
-                label="Adresse email"
-                placeholder="votre@email.com"
-                value={form.email}
-                onChange={handleInputChange('email')}
-                disabled={isLoading}
-                required
-              />
+              <div>
+                <Input
+                  type="email"
+                  label="Adresse email"
+                  placeholder="votre@email.com"
+                  value={form.email}
+                  onChange={handleInputChange('email')}
+                  disabled={isLoading}
+                  required
+                />
+              </div>
 
-              <Input
-                type="password"
-                label="Mot de passe"
-                placeholder="••••••••"
-                value={form.password}
-                onChange={handleInputChange('password')}
-                disabled={isLoading}
-                required
-              />
+              <div>
+                <Input
+                  type="password"
+                  label="Mot de passe"
+                  placeholder="••••••••"
+                  value={form.password}
+                  onChange={handleInputChange('password')}
+                  disabled={isLoading}
+                  required
+                />
+              </div>
 
               <Button
                 variant="primary"
                 type="submit"
                 disabled={isLoading}
                 className="w-full"
+                style={{ width: '100%' }}
               >
                 {isLoading ? 'Connexion en cours...' : 'Se connecter'}
               </Button>
             </form>
 
-            <div className="mt-6 pt-6 border-t border-gray-200">
-              <div className="bg-blue-50 p-4 rounded-md">
-                <h3 className="font-medium text-blue-900 mb-2">Compte de démonstration</h3>
-                <p className="text-sm text-blue-700">
+            <div style={{
+              marginTop: '1.5rem',
+              paddingTop: '1.5rem',
+              borderTop: '1px solid #e5e7eb'
+            }}>
+              <div style={{
+                backgroundColor: '#eff6ff',
+                padding: '1rem',
+                borderRadius: '0.375rem'
+              }}>
+                <h3 style={{
+                  fontWeight: '500',
+                  color: '#1e3a8a',
+                  marginBottom: '0.5rem',
+                  margin: '0 0 0.5rem 0'
+                }}>
+                  Compte de démonstration
+                </h3>
+                <p style={{
+                  fontSize: '0.875rem',
+                  color: '#1d4ed8',
+                  margin: 0,
+                  lineHeight: '1.5'
+                }}>
                   <strong>Email :</strong> admin@home21.com<br/>
                   <strong>Mot de passe :</strong> password
                 </p>
@@ -115,8 +160,12 @@ export const Login: React.FC = () => {
         </Card>
 
         {/* Footer */}
-        <div className="text-center mt-8">
-          <p className="text-sm text-gray-500">
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+          <p style={{
+            fontSize: '0.875rem',
+            color: '#6b7280',
+            margin: 0
+          }}>
             © 2024 Home21 - Tous droits réservés
           </p>
         </div>
