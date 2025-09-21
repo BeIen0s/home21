@@ -112,7 +112,7 @@ git push origin feature/residents-management
 
 ```bash
 # Cloner le projet (pour d'autres développeurs)
-git clone -b home21-v2 https://github.com/BeIen0s/home21.git
+git clone https://github.com/BeIen0s/home21.git
 
 # Développement local avec Docker
 cd home21-v2
