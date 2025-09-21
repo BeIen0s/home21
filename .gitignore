@@ -80,7 +80,8 @@ dist
 
 # Gatsby files
 .cache/
-public
+# Exclure le dossier public de Gatsby, mais pas celui de React
+.gatsby/public
 
 # Storybook build outputs
 .out
