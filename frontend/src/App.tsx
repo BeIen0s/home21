@@ -5,7 +5,7 @@ import { useAuth } from './hooks/useAuth';
 import MainLayout from './components/layout/MainLayout';
 
 // Pages
-import Login from './pages/Login';
+import ModernLogin from './pages/ModernLogin';
 import Dashboard from './pages/Dashboard';
 import Residents from './pages/Residents';
 import Tasks from './pages/Tasks';
@@ -50,7 +50,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Router>
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<ModernLogin />} />
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={
             <ProtectedRoute><Dashboard /></ProtectedRoute>
