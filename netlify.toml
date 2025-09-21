@@ -7,10 +7,11 @@
 
 [build.environment]
   # Version Node.js
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
   
   # Variables d'environnement par défaut
   REACT_APP_ENV = "production"
+  CI = "false"
 
 # Redirections pour React Router
 [[redirects]]
@@ -42,7 +43,7 @@
 
 # Configuration des branches
 [context.production]
-  command = "cd frontend && npm ci --only=production && npm run build"
+  command = "cd frontend && npm ci && npm run build"
 
 [context.deploy-preview]
   command = "cd frontend && npm ci && npm run build"
